@@ -1,26 +1,57 @@
 <body>
-  <div class="container">
-    <header>
-      <h1>Todo List ({{incompleteCount}})</h1>
+    <div class="container">
+        <header>
+            <h1>Listado de compra</h1>
 
-      <label class="hide-completed">
+            <label class="hide-completed">
         <input type="checkbox" />
         Hide Completed Tasks
-      </label>
+      </label> {{> loginButtons}} {{#if currentUser}}
+            <form class="new-task" id="form1">
+                <input type="text" name="text" placeholder="Type to add new tasks" />
 
-      {{> loginButtons}}
+            <select name="seccion">
+            <option type ="text" value="Fruteria">Fruteria</option>
+            <option type ="text" value="Carniceria">Carniceria</option>
+            <option type ="text" value="Congelados">Congelados</option>
+            <option type ="text" value="Vinoteca">Vinoteca</option>
+          </select>
+                <input type="number" name="cantidad" placeholder="Ponga la cantidad..." />
+  <button type="submit" form="form1" value="Submit">Submit</button>
+            </form>
 
-      {{#if currentUser}}
-        <form class="new-task">
-          <input type="text" name="text" placeholder="Type to add new tasks" />
-        </form>
-      {{/if}}
-    </header>
+<br/>
 
-    <ul>
-      {{#each tasks}}
-        {{> task}}
-      {{/each}}
-    </ul>
-  </div>
+<br/>
+            <span>Seleccione su filtro: </span>
+            <div class="filter">
+            <label class="check-fruteria">
+               <input type="radio" name="PlaceFilter">
+                 Fruteria
+             </label>
+             <label class="check-carniceria">
+               <input type="radio" name="PlaceFilter">
+                 Carniceria
+             </label>
+             <label class="check-congelados">
+               <input type="radio" name="PlaceFilter">
+                 Congelados
+             </label>
+             <label class="check-vinoteca">
+              <input type="radio" name="PlaceFilter">
+                 Vinoteca
+            </label>
+            <label class="check-todos">
+             <input type="radio" name="PlaceFilter">
+                Todos
+           </label>
+
+         </div>
+        {{/if}}
+        </header>
+
+        <ul>
+            {{#each tasks}} {{> task}} {{/each}}
+        </ul>
+    </div>
 </body>
