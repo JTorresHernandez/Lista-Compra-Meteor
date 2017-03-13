@@ -2,10 +2,12 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
-import { Tasks } from '../api/tasks.js';
+import { Tasks } from '../api/productos.js';
 
-import './task.js';
+import './opciones.js';
 import './body.html';
+
+//Logica que tiene el body que indica lo que hace cada clase en el body.html
 
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();

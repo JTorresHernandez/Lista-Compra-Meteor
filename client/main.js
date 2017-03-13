@@ -4,6 +4,8 @@ import '../imports/startup/accounts-config.js';
 import '../imports/ui/body.js';
 import './main.html';
 
+//La activacion del template cuando se conecta un usuario para hacer el login
+
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
   this.counter = new ReactiveVar(0);

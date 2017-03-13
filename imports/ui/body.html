@@ -1,14 +1,19 @@
+<!--Template del body que dice que se muestra en la pagina web -->
 <body>
     <div class="container">
         <header>
-            <h1>Listado de compra</h1>
+            <h1 >Listado de la compra</h1>
+
 
             <label class="hide-completed">
         <input type="checkbox" />
-        Hide Completed Tasks
+        Esconder productos comprados
       </label> {{> loginButtons}} {{#if currentUser}}
             <form class="new-task" id="form1">
-                <input type="text" name="text" placeholder="Type to add new tasks" />
+
+              <input type="number" name="cantidad" placeholder="Ponga la cantidad..." id="numero"/>
+
+                <input type="text" name="text" placeholder="Ponga el nombre del producto..." id="producto" />
 
             <select name="seccion">
             <option type ="text" value="Fruteria">Fruteria</option>
@@ -16,9 +21,9 @@
             <option type ="text" value="Congelados">Congelados</option>
             <option type ="text" value="Vinoteca">Vinoteca</option>
           </select>
-                <input type="number" name="cantidad" placeholder="Ponga la cantidad..." />
-  <button type="submit" form="form1" value="Submit">Submit</button>
-            </form>
+        <br /><br />
+<button type="submit" form="form1" value="Submit" style="min-width: 100%;font-family: OpenSans;">Submit</button>
+             </form>
 
 <br/>
 
@@ -48,7 +53,7 @@
 
          </div>
         {{/if}}
-        </header>
+      </header>
 
         <ul>
             {{#each tasks}} {{> task}} {{/each}}

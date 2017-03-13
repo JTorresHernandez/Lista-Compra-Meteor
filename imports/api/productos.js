@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
+//Indican a la base de datos las columnas que va a crear y que datos tiene que recoger del body.js para poder trabajar en la base de datos
+
 export const Tasks = new Mongo.Collection('tasks');
 
 if (Meteor.isServer) {

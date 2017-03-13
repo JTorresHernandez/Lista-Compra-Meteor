@@ -1,9 +1,11 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
-import { Tasks } from '../api/tasks.js';
+import { Tasks } from '../api/productos.js';
 
-import './task.html';
+import './productos.html';
+
+//Acciones que puede hacer un usuario con los productos
 
 Template.task.helpers({
   isOwner() {

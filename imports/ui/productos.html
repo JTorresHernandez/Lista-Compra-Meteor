@@ -1,6 +1,11 @@
+<!--Indica los permisos de las modificaciones de los productos y quien las puede modificar--> 
+
 <template name="task">
   <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    {{#if isOwner}}
     <button class="delete">&times;</button>
+{{/if}}
+
 
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
